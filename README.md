@@ -137,25 +137,20 @@ What is Arduino?
 
 ---
 
-## 📸 Demo
+## 📸 Asking a Question and Generated Answer
 
-### Application Startup
 
 ![Application Startup](images/demo1.png)
 
 ---
 
-### Asking a Question
+### Asking a Question and Generated Answer
 
 ![Question](images/demo2.png)
 
 ---
 
-### Generated Answer
 
-![Generated Answer](images/demo3.png)
-
----
 
 ## 💬 Example
 
