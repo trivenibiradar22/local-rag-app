@@ -1,22 +1,22 @@
 # 📚 Local RAG Application using FAISS + Ollama
 
-A **Retrieval-Augmented Generation (RAG)** application that answers questions from your own **PDF** and **TXT** documents using **Sentence Transformers**, **FAISS**, and **Ollama**.
+A **Retrieval-Augmented Generation (RAG)** application that enables users to ask questions about their own **PDF** and **TXT** documents using **Sentence Transformers**, **FAISS**, and a **local Ollama Large Language Model (LLM)**.
 
-Unlike cloud-based solutions, this project runs completely **offline on your local machine**, ensuring your documents remain private while providing AI-powered question answering.
+Unlike cloud-based AI applications, this project runs entirely on your local machine, ensuring **privacy**, **offline access**, and **fast document retrieval**.
 
 ---
 
 ## 🚀 Features
 
-- 📄 Supports **PDF** and **TXT** documents
-- 🧠 Uses **Sentence Transformers (all-MiniLM-L6-v2)** for embeddings
-- 🔍 Fast semantic search using **FAISS**
-- 🤖 Local LLM using **Ollama**
+- 📄 Supports PDF and TXT documents
+- 🧠 Semantic embeddings using **Sentence Transformers (all-MiniLM-L6-v2)**
+- 🔍 Fast semantic search with **FAISS**
+- 🤖 Local LLM using **Ollama (TinyLlama / Llama3.2)**
 - 💾 Automatic embedding caching
 - ⚡ Automatic FAISS index caching
 - 🔒 Fully offline after downloading the model
-- 🐍 Simple Python implementation
 - 📚 Retrieval-Augmented Generation (RAG)
+- 🐍 Simple and beginner-friendly Python implementation
 
 ---
 
@@ -31,17 +31,18 @@ Unlike cloud-based solutions, this project runs completely **offline on your loc
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 local-rag-app/
 │
 ├── documents/
-│   ├── sample.pdf
-│   └── sample.txt
+│   └── Place your PDF/TXT files here
 │
 ├── images/
-│   └── demo.png
+│   ├── demo1.png
+│   ├── demo2.png
+│   └── demo3.png
 │
 ├── rag_app.py
 ├── requirements.txt
@@ -51,9 +52,9 @@ local-rag-app/
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
-## 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/trivenibiradar22/local-rag-app.git
@@ -63,7 +64,7 @@ cd local-rag-app
 
 ---
 
-## 2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 
 ### Windows
 
@@ -83,7 +84,7 @@ source venv/bin/activate
 
 ---
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -91,23 +92,23 @@ pip install -r requirements.txt
 
 ---
 
-## 4. Install Ollama
+### 4. Install Ollama
 
-Download and install Ollama:
+Download Ollama:
 
 https://ollama.com/download
 
 ---
 
-## 5. Download a Model
+### 5. Download an LLM
 
-For lower RAM systems:
+For systems with lower RAM:
 
 ```bash
 ollama pull tinyllama
 ```
 
-For better response quality:
+For better answer quality:
 
 ```bash
 ollama pull llama3.2
@@ -115,60 +116,84 @@ ollama pull llama3.2
 
 ---
 
-# ▶️ Running the Application
+## ▶️ Running the Application
 
-Place your PDF or TXT files inside the **documents** folder.
+1. Place your PDF or TXT documents inside the **documents** folder.
 
-Run:
+2. Run the application:
 
 ```bash
 python rag_app.py
 ```
 
----
+3. Ask questions about your documents.
 
-# 💬 Example
+Example:
 
-```
+```text
 Your question:
 What is Arduino?
 ```
 
-Output:
+---
 
+## 📸 Demo
+
+### Application Startup
+
+![Application Startup](images/demo1.png)
+
+---
+
+### Asking a Question
+
+![Question](images/demo2.png)
+
+---
+
+### Generated Answer
+
+![Generated Answer](images/demo3.png)
+
+---
+
+## 💬 Example
+
+**Question**
+
+```text
+What is Arduino?
 ```
+
+**Answer**
+
+```text
 Arduino is an open-source microcontroller board used as the central controller in the Smart Dry and Wet Waste Segregation System.
 ```
 
 ---
 
-# 📸 Demo
+## 🧠 How It Works
 
-> Save a screenshot as **images/demo.png**.
+1. Load PDF and TXT documents.
+2. Split documents into smaller chunks.
+3. Generate embeddings using Sentence Transformers.
+4. Store embeddings inside a FAISS vector index.
+5. Retrieve the most relevant document chunks.
+6. Send the retrieved context to Ollama.
+7. Generate an answer using only the retrieved information.
 
-```markdown
-![Application Demo](images/demo.png)
+---
+
+## 📦 Dependencies
+
+Install all dependencies using:
+
+```bash
+pip install -r requirements.txt
 ```
 
-When the image is uploaded, it will appear here:
-
-![Application Demo](images/demo.png)
-
----
-
-# 🧠 How It Works
-
-1. Load PDF and TXT documents
-2. Split documents into chunks
-3. Generate embeddings using Sentence Transformers
-4. Store embeddings in a FAISS index
-5. Retrieve the most relevant chunks
-6. Send the retrieved context to Ollama
-7. Generate an answer using only the retrieved context
-
----
-
-# 📦 Dependencies
+Main libraries:
 
 - faiss-cpu
 - sentence-transformers
@@ -176,18 +201,12 @@ When the image is uploaded, it will appear here:
 - numpy
 - pypdf
 
-Install all dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
 ---
 
-# 🔮 Future Improvements
+## 🔮 Future Improvements
 
 - 🌐 Streamlit Web Interface
-- 📁 Multiple document upload
+- 📁 Upload multiple documents
 - 📄 DOCX support
 - 💬 Chat history
 - 🧠 Conversation memory
@@ -197,11 +216,11 @@ pip install -r requirements.txt
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Triveni Biradar**
 
-B.Tech Electronics & Telecommunication Engineering
+B.Tech – Electronics & Telecommunication Engineering
 
 MIT Academy of Engineering (MITAOE), Pune
 
@@ -209,20 +228,21 @@ GitHub: https://github.com/trivenibiradar22
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
-Contributions are welcome!
+Contributions are welcome.
 
 1. Fork the repository.
-2. Create a new branch.
+2. Create a new feature branch.
 3. Commit your changes.
-4. Open a Pull Request.
+4. Push the branch.
+5. Open a Pull Request.
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
 
 It helps others discover the project and motivates future improvements.
 
